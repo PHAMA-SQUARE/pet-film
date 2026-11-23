@@ -204,7 +204,7 @@
   <h2><small>HOW TO</small>참여는 딱 세 단계</h2>
   <ol class="steps">
     <li><span class="n">01</span><div><b>영상 5개 보내기</b><span>자는 모습, 먹는 모습처럼 칸마다 안내된 장면을 골라 주세요. 4개만 있어도 돼요.</span></div></li>
-    <li><span class="n">02</span><div><b>릴스로 만들어 올려요</b><span>자막과 편집은 저희가 해요. 막내앨범 계정에 올리면서 보호자님 계정도 공동 작업자로 초대해요.</span></div></li>
+    <li><span class="n">02</span><div><b>릴스로 만들어 올려요</b><span>자막과 편집은 저희가 해요. 막내앨범과 파마스퀘어 계정에 함께 올리고, 보호자님 계정도 공동 작업자로 초대해요.</span></div></li>
     <li><span class="n">03</span><div><b>반응 모으고 선물 받기</b><span>친구들에게 공유해 주세요. 조회수·좋아요·댓글이 가장 많은 아이가 선물을 받아요.</span></div></li>
   </ol>
 
@@ -263,7 +263,7 @@
         <input type="email" id="email" maxlength="80" placeholder="선택 사항" autocomplete="email">
       </fieldset>
       <fieldset>
-        <div class="collab"><b>완성 릴스는 이렇게 받아요</b><br>막내앨범 계정에 올리면서 보호자님 계정을 <b>공동 작업자</b>로 초대해요. 알림이나 DM에 온 초대를 <b>수락</b>하면 같은 릴스가 보호자님 피드에도 올라가고, 양쪽 반응이 함께 모여요.</div>
+        <div class="collab"><b>완성 릴스는 이렇게 받아요</b><br>막내앨범 계정에 올리면서 파마스퀘어 계정과 보호자님 계정을 <b>공동 작업자</b>로 초대해요. 알림이나 DM에 온 초대를 <b>수락</b>하면 같은 릴스가 세 계정 피드에 함께 올라가고, 반응은 한 게시물로 모두 합쳐져요.</div>
       </fieldset>
       <fieldset>
         <label class="check"><input type="checkbox" id="agreePrivacy">
@@ -271,7 +271,7 @@
           <span>릴스 제작, 콘테스트 진행과 선물 전달을 위해 아이 이름, 영상, 인스타그램 아이디, 이메일을 받습니다. 수집·이용 주체는 파마스퀘어이며, 인스타그램 아이디와 이메일은 해당 회차 선물 전달을 마친 날로부터 3개월 뒤 삭제합니다.</span></div></label>
         <label class="check"><input type="checkbox" id="agreePublish">
           <div><b>릴스 게시와 콘테스트 참여에 동의해요 (필수)</b>
-          <span>완성 릴스는 파마스퀘어 막내앨범 계정에 올라가고, 당첨 시 아이 이름과 인스타그램 아이디가 발표 게시물에 나와요. 연락처는 공개하지 않아요.</span></div></label>
+          <span>완성 릴스는 파마스퀘어 막내앨범 계정에 올라가 파마스퀘어 계정과 공동 작업으로 함께 공개되고, 당첨 시 아이 이름과 인스타그램 아이디가 발표 게시물에 나와요. 연락처는 공개하지 않아요.</span></div></label>
         <label class="check"><input type="checkbox" id="agreeMarketing">
           <div><b>파마스퀘어 소식과 혜택 받기 (선택)</b>
           <span>다음 회차 안내와 매장 혜택을 인스타그램 DM 또는 이메일로 보내 드려요. 언제든 그만 받을 수 있어요.</span></div></label>
@@ -307,19 +307,19 @@
 // ▼ 회차 설정. 2주마다 이 블록만 바꾼다 (날짜는 한국 시간 기준, 끝나는 날 23:59까지 응모)
 const ROUND = { no: 1, season: "2026-r01", start: "2026-11-30", end: "2026-12-13", announce: "2026-12-18" };
 // ▼ 선물과 뽑는 방법
-const PRIZE = { winners: 3, what: "소정의 선물", note: "강아지·고양이 합쳐 반응 점수 상위 3마리" };
+const PRIZE = { winners: 3, what: "선물은 공개 예정", note: "강아지·고양이 합쳐 반응 점수 상위 3마리" };
 const SCORE = { view: 1, like: 5, comment: 10, countDay: "발표 전날 낮 12시" };
 // ▼ 픽업 매장. 주소·지도 링크를 채우면 카드에 보인다
 const STORES = [
-  { name: "구로점", addr: "", map: "" },
-  { name: "하남점", addr: "", map: "" }
+  { name: "구로점", addr: "", map: "https://naver.me/Gbyl6mUA" },
+  { name: "하남점", addr: "", map: "https://naver.me/GEiYUlIZ" }
 ];
 // ▼ Supabase (공개용 키만. service_role 키는 절대 넣지 않는다)
 const SUPABASE_URL = "https://ypeqsbmuuedzdzxkuuoj.supabase.co";
 const SUPABASE_KEY = "sb_publishable_btnttsBH9a0A7BxyhS5T7w_o0_YfZdu";
 const BUCKET = "submissions";
 // ▼ 샘플 영상과 칸별 예시 영상 주소. 비어 있으면 회색 칸으로 보인다
-const SAMPLE = { A: "https://d2ol7oe51mr4n9.cloudfront.net/user_38bEaHFyIQZGbqYcZnT2FbFDAmL/b192ab8a-cadb-4ba0-89df-eb9bc2832d01.mp4", B: "https://d2ol7oe51mr4n9.cloudfront.net/user_38bEaHFyIQZGbqYcZnT2FbFDAmL/55737fbe-1f03-40c4-b4a6-d535019bda6b.mp4" };
+const SAMPLE = { A: "https://d2ol7oe51mr4n9.cloudfront.net/user_38bEaHFyIQZGbqYcZnT2FbFDAmL/64ae83aa-d489-4d2c-8441-fe70dd161b67.mp4", B: "https://d2ol7oe51mr4n9.cloudfront.net/user_38bEaHFyIQZGbqYcZnT2FbFDAmL/134b010a-5f0f-4b1e-9fcb-946a4ae885cc.mp4" };
 const SLOTS = {
   A: [
     ["카메라를 쳐다보는 모습", "이름을 부르면 돌아보는 순간이 좋아요", "{{EX_A1}}"],
@@ -355,7 +355,7 @@ $('ruleAnnounce').innerHTML = `${md2(ROUND.announce)}<span>막내앨범 계정 �
 $('rulePrize').innerHTML = `${PRIZE.what}<span>${PRIZE.note}. 구로점·하남점 중 편한 곳에서 받아 가세요.</span>`;
 $('scoreChips').innerHTML = `<i>조회 1회 = ${SCORE.view}점</i><i>좋아요 1개 = ${SCORE.like}점</i><i>댓글 1개 = ${SCORE.comment}점</i>`;
 $('countRule').textContent = `${SCORE.countDay} 숫자로 세요. 사서 늘린 조회수·좋아요가 확인되면 제외해요.`;
-$('faqScore').textContent = `막내앨범 계정에 올라간 릴스의 숫자를 ${SCORE.countDay}에 그대로 세요. 조회 1회는 ${SCORE.view}점, 좋아요 1개는 ${SCORE.like}점, 댓글 1개는 ${SCORE.comment}점이에요. 공동 작업으로 보호자님 계정에 함께 올라간 반응도 같은 게시물이라 모두 합쳐져요.`;
+$('faqScore').textContent = `막내앨범 계정에 올라간 릴스의 숫자를 ${SCORE.countDay}에 그대로 세요. 조회 1회는 ${SCORE.view}점, 좋아요 1개는 ${SCORE.like}점, 댓글 1개는 ${SCORE.comment}점이에요. 파마스퀘어 계정과 보호자님 계정에 공동 작업으로 함께 올라간 반응도 같은 게시물이라 모두 합쳐져요.`;
 const now = Date.now(), endT = kst(ROUND.end).getTime() + 86400e3, startT = kst(ROUND.start).getTime();
 const open = now < endT;
 const days = Math.ceil((endT - now) / 86400e3);
@@ -368,7 +368,7 @@ const line = T.map(t => `<span>${t}</span><i>·</i>`).join('');
 $('tickerIn').innerHTML = line + line;
 
 // 매장
-$('stores').innerHTML = STORES.map(s => `<div class="store"><span class="tag">PICK UP</span><b>${s.name}</b>${s.addr ? `<span>${s.addr}</span>` : '<span>파마스퀘어 매장</span>'}${s.map ? `<a href="${s.map}" target="_blank" rel="noopener">지도 보기</a>` : ''}</div>`).join('');
+$('stores').innerHTML = STORES.map(s => `<div class="store"><span class="tag">PICK UP</span><b>${s.name}</b>${s.addr ? `<span>${s.addr}</span>` : '<span>파마스퀘어 매장</span>'}${s.map ? `<a href="${s.map}" target="_blank" rel="noopener">네이버 지도 보기</a>` : ''}</div>`).join('');
 
 // 샘플
 const vid = $('sampleVideo'), sb = $('soundBtn');
