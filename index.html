@@ -6,131 +6,138 @@
 <title>파마스퀘어 막내앨범 · 우리 아이 영상 무료 신청</title>
 <meta name="description" content="휴대폰 속 우리 아이 영상을 릴스 한 편으로 만들어 드려요. 파마스퀘어의 무료 선물입니다.">
 <meta property="og:title" content="파마스퀘어 막내앨범 · 우리 아이 영상 무료 신청">
-<meta property="og:description" content="고양이 자기소개, 강아지 자기소개, 아이가 보내는 편지. 파마스퀘어가 무료로 만들어 드려요.">
+<meta property="og:description" content="휴대폰 속 강아지·고양이 영상으로 이번 주의 릴스를 만들어 드려요. 마지막엔 아이가 보내는 짧은 편지까지. 파마스퀘어의 무료 선물입니다.">
 <meta property="og:image" content="{{SAMPLE_POSTER_URL}}">
-<meta name="theme-color" content="#F6F2EA">
+<meta name="theme-color" content="#00786F">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
 <style>
+  /* 파마스퀘어 브랜드 디자인 (2026-11-23 대표님 지시로 기획안의 연말 우편 디자인 대신 적용) */
   :root{
-    --paper:#F6F2EA; --light:#FCFAF6; --ink:#1F1D1B; --ink-2:#4A4642; --grey:#6E6963; --line:#DCD6CB;
-    --clay:#9A3B2E; --slate:#2F4A3C; --night:#1F1D1B;
-    --serif:'Noto Serif KR',serif; --latin:'Cormorant Garamond','Noto Serif KR',serif;
-    --airmail:repeating-linear-gradient(135deg,#9A3B2E 0 6px,var(--light) 6px 18px,#C9A873 18px 24px,var(--light) 24px 36px,#2F4A3C 36px 42px,var(--light) 42px 54px);
+    --bg:#F4F8F7; --card:#FFFFFF; --ink:#10181E; --ink-2:#4E6863; --grey:#5C7570; --line:#E6EDEB; --line-2:#D8E3E0;
+    --teal:#00786F; --teal-d:#005251; --teal-b:#03A793; --mint:#7FE3D2; --mint-1:#CDF3EA; --mint-2:#E6F7F2; --warn:#A33A22;
+    --grad:linear-gradient(160deg,#03A793 0%,#018E86 45%,#00786F 100%);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
-  body{font-family:'SUIT',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
-  .airmail{height:8px;background:var(--airmail)}
-  .wrap{max-width:480px;margin:0 auto;padding:0 24px 64px}
-  header{padding:26px 0 0;display:flex;align-items:center;justify-content:space-between}
-  .brand{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.02em}
-  .cap{font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--grey)}
-  .ital{font-family:var(--latin);font-style:italic;font-weight:500}
-  .hero{padding:34px 0 0}
-  .hero .eyebrow{font-size:13px;color:var(--grey);font-weight:600;margin-bottom:14px}
-  h1{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.45;letter-spacing:-.025em}
-  .hair{width:56px;height:2px;margin:20px 0;background:linear-gradient(90deg,#9A3B2E 0 33%,#C9A873 33% 66%,#2F4A3C 66% 100%)}
-  .lead{font-size:16px;color:var(--ink-2)}
-  .free{display:inline-block;margin-top:18px;padding:6px 14px;border:1px solid var(--ink);font-size:13px;font-weight:700;letter-spacing:.04em}
+  body{font-family:'SUIT','Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;word-break:keep-all;overflow-wrap:break-word}
+  .airmail{display:none}
+  .wrap{max-width:480px;margin:0 auto;padding:0 20px 64px}
+  header{margin:0 -20px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border-bottom:1px solid var(--line)}
+  .logo{height:11px;width:auto;display:block}
+  .brand{font-size:12px;font-weight:800;color:var(--teal);background:var(--mint-2);padding:6px 10px;border-radius:40px;white-space:nowrap}
+  .cap{font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--grey)}
+  .ital{font-weight:800}
+  .hero{margin:0 -20px;padding:30px 22px 28px;background:var(--grad);color:#FFFFFF}
+  .hero .eyebrow{font-size:13px;color:var(--mint-1);font-weight:800;letter-spacing:.04em;margin-bottom:12px}
+  h1{font-weight:900;font-size:clamp(28px,8vw,36px);line-height:1.28;letter-spacing:-.03em}
+  .hair{width:48px;height:3px;margin:18px 0;background:var(--mint);border-radius:3px}
+  .lead{font-size:16px;color:#E2F7F2;line-height:1.65}
+  .free{display:inline-block;margin-top:18px;padding:8px 14px;border-radius:40px;background:#FFFFFF;color:var(--teal-d);font-size:14px;font-weight:900}
 
-  .sample{margin:34px -24px 0;background:var(--night);color:var(--paper);padding:26px 24px 24px}
+  .sample{margin:0 -20px;background:var(--teal-d);color:#FFFFFF;padding:24px 20px}
   .sample-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
-  .sample-head p{font-family:var(--serif);font-size:16px}
-  .sample-head span{font-size:12px;color:#B9B2A8}
-  .video-box{position:relative;width:100%;max-width:300px;margin:0 auto;aspect-ratio:9/16;background:#000;overflow:hidden}
+  .sample-head p{font-size:17px;font-weight:800}
+  .sample-head span{font-size:12px;font-weight:700;color:var(--mint-1)}
+  .video-box{position:relative;width:100%;max-width:300px;margin:0 auto;aspect-ratio:9/16;background:#0B3B39;border-radius:18px;overflow:hidden}
   .video-box video{width:100%;height:100%;object-fit:cover;display:block}
-  .sound{position:absolute;right:10px;bottom:10px;border:0;border-radius:999px;background:rgba(0,0,0,.55);color:#FFFFFF;font:inherit;font-size:12px;font-weight:600;padding:8px 12px;cursor:pointer}
-  .sample-note{margin-top:14px;font-size:13px;color:#D9D2C7;text-align:center}
+  .sound{position:absolute;right:10px;bottom:10px;border:0;border-radius:40px;background:rgba(0,0,0,.55);color:#FFFFFF;font:inherit;font-size:12px;font-weight:700;padding:8px 12px;cursor:pointer}
+  .sample-note{margin-top:14px;font-size:13px;color:var(--mint-1);text-align:center}
 
-  .letter{margin:34px 0 0;padding:6px;background:var(--airmail)}
-  .letter-in{background:var(--light);padding:50px 22px 24px;position:relative}
-  .letter-in p{font-family:var(--serif);font-weight:300;font-size:15px;line-height:1.85;color:var(--ink-2)}
+  .letter{margin:28px 0 0;background:var(--card);border:1px solid var(--line);border-radius:18px}
+  .letter-in{padding:22px 18px;position:relative}
+  .letter-in p{font-size:15px;line-height:1.8;color:var(--ink-2)}
   .letter-in p+p{margin-top:10px}
   .letter-in .sign{margin-top:16px;text-align:right;font-size:14px;color:var(--ink)}
-  .postmark{position:absolute;right:8px;top:-30px;width:76px;height:76px}
+  .postmark{display:none}
 
-  h2{font-family:var(--serif);font-weight:500;font-size:21px;margin:44px 0 18px;letter-spacing:-.02em}
-  .steps{list-style:none;border-top:1px solid var(--line)}
-  .steps li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
-  .steps .n{flex:none;font-family:var(--latin);font-style:italic;font-size:24px;color:var(--clay);line-height:1.2;width:28px}
-  .steps b{display:block;font-size:15px;font-weight:600}
-  .steps span{font-size:14px;color:var(--grey)}
+  h2{font-weight:900;font-size:22px;margin:36px 0 16px;letter-spacing:-.02em;line-height:1.4}
+  .steps{list-style:none;display:grid;gap:10px}
+  .steps li{display:flex;gap:14px;align-items:center;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:18px}
+  .steps .n{flex:none;width:40px;height:40px;border-radius:14px;background:var(--mint-2);color:var(--teal-d);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center}
+  .steps b{display:block;font-size:16px;font-weight:900}
+  .steps span{font-size:13px;color:var(--ink-2)}
 
   form{margin-top:4px}
-  fieldset{border:0;margin:0 0 24px}
-  .q{display:block;font-size:15px;font-weight:700;margin-bottom:8px}
-  .req{color:var(--clay);margin-left:2px}
-  .hint{font-size:13px;color:var(--grey);margin:-4px 0 10px}
-  input[type=text],input[type=email],input[type=number],textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--light);border:1px solid var(--line);border-radius:4px;padding:13px 14px;outline:none;transition:border-color .15s}
+  fieldset{border:0;margin:0 0 22px}
+  .q{display:block;font-size:15px;font-weight:800;margin-bottom:8px}
+  .req{color:var(--teal);margin-left:2px}
+  .hint{font-size:13px;color:var(--grey);margin:-4px 0 10px;line-height:1.55}
+  input[type=text],input[type=email],input[type=number],textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:14px;padding:14px 16px;outline:none;transition:border-color .15s}
   textarea{min-height:120px;resize:vertical;line-height:1.6}
-  input:focus,textarea:focus{border-color:var(--ink)}
-  ::placeholder{color:#A9A39A}
+  input:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px var(--mint-2)}
+  button:focus-visible,a:focus-visible,input:focus-visible,label:focus-within{outline:3px solid var(--teal-d);outline-offset:2px}
+  ::placeholder{color:#93A6A2}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px dashed #BDB5A8;background:var(--light);border-radius:4px;padding:22px 14px;text-align:center;cursor:pointer}
-  .drop:active{background:var(--paper)}
-  .drop b{font-size:15px}
+  .drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1.5px dashed #B9CCC8;background:var(--card);border-radius:16px;padding:22px 14px;text-align:center;cursor:pointer}
+  .drop:active{background:var(--mint-2)}
+  .drop b{font-size:15px;font-weight:800;color:var(--teal-d)}
   .drop span{font-size:13px;color:var(--grey)}
   .drop input{display:none}
   .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
   .thumbs:empty{display:none}
-  .thumb{position:relative;aspect-ratio:1;overflow:hidden;background:var(--line)}
+  .thumb{position:relative;aspect-ratio:1;overflow:hidden;background:var(--line);border-radius:10px}
   .thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}
-  .thumb button{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(31,29,27,.72);color:#FFFFFF;font-size:13px;line-height:24px;cursor:pointer}
-  .thumb .tag{position:absolute;left:4px;bottom:3px;font-size:10px;color:#FFFFFF;background:rgba(31,29,27,.6);padding:1px 5px}
+  .thumb button{position:absolute;top:3px;right:3px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(16,24,30,.72);color:#FFFFFF;font-size:13px;line-height:26px;cursor:pointer}
+  .thumb .tag{position:absolute;left:4px;bottom:3px;font-size:10px;color:#FFFFFF;background:rgba(16,24,30,.6);padding:1px 5px;border-radius:6px}
   .count{font-size:13px;color:var(--grey);margin-top:6px}
 
-  .share{padding:5px;background:var(--airmail);margin-bottom:10px}
-  .share-in{background:var(--light);padding:18px 18px 16px}
-  .share-in .t{font-family:var(--serif);font-weight:500;font-size:17px;margin-bottom:8px}
+  .share{margin-bottom:10px;background:var(--card);border:1px solid var(--line);border-radius:18px}
+  .share-in{padding:18px}
+  .share-in .t{font-weight:900;font-size:17px;margin-bottom:8px}
   .share-in p{font-size:14px;line-height:1.75;color:var(--ink-2)}
-  .check{display:flex;gap:10px;align-items:flex-start;padding:14px;background:var(--light);border:1px solid var(--line);border-radius:4px}
+  .check{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;cursor:pointer}
   .check+.check{margin-top:8px}
   .share .check{border:0;padding:12px 0 0;background:transparent}
-  .check input{flex:none;width:20px;height:20px;margin-top:3px;accent-color:var(--ink)}
-  .check b{font-size:14px;display:block}
+  .check input{flex:none;width:22px;height:22px;margin-top:2px;accent-color:var(--teal)}
+  .check b{font-size:14px;font-weight:800;display:block}
   .check span{font-size:13px;color:var(--grey);display:block;line-height:1.55;margin-top:2px}
 
-  .submit{width:100%;margin-top:8px;padding:17px;border:0;border-radius:4px;background:var(--ink);color:#FFFFFF;font:inherit;font-size:17px;font-weight:700;cursor:pointer}
+  .submit{width:100%;min-height:56px;margin-top:8px;padding:16px;border:0;border-radius:40px;background:var(--teal);color:#FFFFFF;font:inherit;font-size:17px;font-weight:900;cursor:pointer}
+  .submit:active{background:var(--teal-d)}
   .submit:disabled{opacity:.5;cursor:default}
-  .err{display:none;margin-top:12px;padding:12px 14px;background:#F3E2DA;color:#7A3420;font-size:14px}
+  .err{display:none;margin-top:12px;padding:12px 16px;background:#FBF3EF;color:var(--warn);font-size:14px;border-radius:14px}
   .progress{display:none;margin-top:14px}
-  .bar{height:4px;background:var(--line);overflow:hidden}
-  .bar i{display:block;height:100%;width:0;background:var(--clay);transition:width .25s}
+  .bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .25s}
   .progress p{font-size:13px;color:var(--grey);margin-top:6px;text-align:center}
 
-  .done{display:none;text-align:center;padding:48px 0 16px}
-  .done .postmark-big{width:120px;height:120px;margin:0 auto 22px;display:block}
-  .done h2{margin:0 0 12px;font-size:22px}
+  .done{display:none;text-align:center;padding:40px 0 16px}
+  .done .postmark-big{width:112px;height:112px;margin:0 auto 20px;display:block}
+  .done h2{margin:0 0 12px;font-size:24px}
   .done p{color:var(--ink-2);font-size:15px}
 
-  .faq details{border-bottom:1px solid var(--line);padding:15px 0}
-  .faq summary{font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 18px}
+  .faq details{border-bottom:1px solid var(--line);padding:16px 0}
+  .faq details:last-child{border-bottom:0}
+  .faq summary{font-size:15px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
   .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";color:var(--grey)}
+  .faq summary::after{content:"+";color:var(--teal);font-weight:900}
   .faq details[open] summary::after{content:"–"}
   .faq p{font-size:14px;color:var(--ink-2);margin-top:8px}
-  footer{margin-top:48px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center}
-  footer a{color:var(--ink-2);font-size:13px}
-  .test-banner{display:none;background:var(--slate);color:#FFFFFF;font-size:13px;text-align:center;padding:8px}
+  footer{margin-top:40px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+  footer .logo{height:9px;opacity:.7}
+  footer a{color:var(--teal);font-size:13px;font-weight:700}
+  .test-banner{display:none;background:var(--teal-d);color:#FFFFFF;font-size:13px;text-align:center;padding:8px}
   .kinds{display:grid;gap:10px}
-  .kind{display:flex;gap:14px;align-items:center;padding:16px;background:var(--light);border:1px solid var(--line);border-radius:6px;cursor:pointer}
-  .kind input{display:none}
-  .kind .k{flex:none;width:40px;height:40px;border-radius:50%;background:var(--clay);color:#FFFFFF;font-family:var(--latin);font-style:italic;font-size:22px;display:flex;align-items:center;justify-content:center}
-  .kind b{display:block;font-size:16px}
-  .kind span{font-size:13px;color:var(--grey);line-height:1.5;display:block}
-  .kind.on{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
-  .slot{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
-  .slot:first-of-type{border-top:1px solid var(--line)}
-  .slot video{width:84px;height:112px;object-fit:cover;background:var(--line);border-radius:4px;display:block}
-  .slot b{display:block;font-size:15px}
+  .kind{display:flex;gap:14px;align-items:center;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:18px;cursor:pointer}
+  .kind input{position:absolute;opacity:0;pointer-events:none}
+  .kind .k{flex:none;width:48px;height:48px;border-radius:14px;background:var(--mint-2);color:var(--teal-d);font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center}
+  .kind b{display:block;font-size:16px;font-weight:900}
+  .kind span{font-size:13px;color:var(--ink-2);line-height:1.5;display:block}
+  .kind.on{border-color:var(--teal);box-shadow:0 0 0 2px var(--teal)}
+  .kind.on .k{background:var(--teal);color:#FFFFFF}
+  #slots{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 16px}
+  .slot{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+  .slot:last-child{border-bottom:0}
+  .slot video{width:84px;height:112px;object-fit:cover;background:var(--mint-2);border-radius:12px;display:block}
+  .slot b{display:block;font-size:15px;font-weight:800}
   .slot .d{font-size:13px;color:var(--grey);line-height:1.5}
-  .slot label{display:inline-block;margin-top:8px;padding:7px 12px;border:1px solid var(--ink);border-radius:4px;font-size:13px;font-weight:700;cursor:pointer}
+  .slot label{display:inline-flex;align-items:center;min-height:40px;margin-top:8px;padding:8px 14px;border-radius:40px;background:var(--mint-2);color:var(--teal-d);font-size:13px;font-weight:800;cursor:pointer}
   .slot label input{display:none}
-  .slot .f{font-size:12px;color:var(--slate);margin-top:6px;display:block;word-break:break-all}
-  .collab{margin-top:10px;padding:14px 16px;background:var(--light);border-left:3px solid var(--slate);font-size:14px;color:var(--ink-2);line-height:1.7}
+  .slot .f{font-size:12px;color:var(--teal);font-weight:700;margin-top:6px;display:block;word-break:break-all}
+  .collab{margin-top:10px;padding:16px 18px;background:var(--mint-2);border-radius:18px;font-size:14px;color:var(--ink-2);line-height:1.7}
+  .collab b{color:var(--teal-d)}
   .hide{display:none}
 </style>
 </head>
@@ -139,34 +146,33 @@
 <div class="airmail"></div>
 <div class="wrap">
   <header>
-    <div class="brand">파마스퀘어 막내앨범</div>
-    <div class="cap">PET FILM · BY PHARMASQUARE</div>
+    <img class="logo" src="logo.png" alt="PHAMA SQUARE">
+    <div class="brand">막내앨범</div>
   </header>
 
   <section class="hero">
     <p class="eyebrow">파마스퀘어가 드리는 무료 선물</p>
     <h1>휴대폰 속 우리 아이 영상,<br>릴스 한 편으로 만들어 드려요</h1>
     <div class="hair"></div>
-    <p class="lead">세 가지 중 하나를 고르고, 안내에 맞는 영상이나 사진만 보내 주세요. 자막과 편집은 저희가 해서 파마스퀘어 막내앨범 계정에 올리고, 보호자님 계정에도 함께 올라가게 해 드려요.</p>
+    <p class="lead">강아지·고양이 중 하나를 고르고, 안내에 맞는 영상만 보내 주세요. 웃긴 자기소개 끝에 아이가 보내는 짧은 편지도 담아 드려요. 자막과 편집은 저희가 해서 파마스퀘어 막내앨범 계정에 올리고, 보호자님 계정에도 함께 올라가게 해 드려요.</p>
     <span class="free">무료로 만들어 드려요</span>
   </section>
 
   <section class="sample" aria-label="샘플 영상">
-    <div class="sample-head"><p id="sampleTitle">이렇게 만들어져요</p><span id="sampleLen">약 17초</span></div>
+    <div class="sample-head"><p id="sampleTitle">이번 주의 영상</p><span id="sampleLen">약 24초</span></div>
     <div class="video-box">
       <video id="sampleVideo" src="{{SAMPLE_B_URL}}" autoplay muted loop playsinline preload="metadata"></video>
       <button type="button" class="sound" id="soundBtn">소리 켜기</button>
     </div>
-    <p class="sample-note">샘플 영상 · 보내 주신 영상과 이야기가 이 자리에 들어갑니다.</p>
+    <p class="sample-note" id="sampleNote">샘플 영상 · 매주 주제가 바뀌어요</p>
   </section>
 
   <h2 id="apply">어떤 영상을 만들까요?</h2>
   <form id="form" novalidate>
     <fieldset>
       <div class="kinds">
-        <label class="kind" data-k="A"><input type="radio" name="kind" value="A"><div class="k">A</div><div><b>고양이 자기소개</b><span>"나는 고양이…"로 시작하는 웃긴 속마음 영상. 영상 5개만 보내 주세요</span></div></label>
-        <label class="kind" data-k="B"><input type="radio" name="kind" value="B"><div class="k">B</div><div><b>강아지 자기소개</b><span>"나는 강아지…"로 시작하는 웃긴 속마음 영상. 영상 5개만 보내 주세요</span></div></label>
-        <label class="kind" data-k="C"><input type="radio" name="kind" value="C"><div class="k">C</div><div><b>아이가 보내는 편지</b><span>아이가 보호자님께 쓰는 편지와 사진 한 장으로 만든 AI 장면. 사진과 이야기를 보내 주세요</span></div></label>
+        <label class="kind" data-k="A"><input type="radio" name="kind" value="A"><div class="k">A</div><div><b>고양이 자기소개</b><span>"나는 고양이…"로 시작하는 웃긴 속마음 영상과 마지막 편지. 영상 5개만 보내 주세요</span></div></label>
+        <label class="kind" data-k="B"><input type="radio" name="kind" value="B"><div class="k">B</div><div><b>강아지 자기소개</b><span>"나는 강아지…"로 시작하는 웃긴 속마음 영상과 마지막 편지. 영상 5개만 보내 주세요</span></div></label>
       </div>
     </fieldset>
 
@@ -193,6 +199,15 @@
         <label class="q" for="quirk">우리 아이만의 웃긴 습관</label>
         <p class="hint">영상 마지막 반전 한 줄에 써요. 예) 간식 봉지 소리엔 자다가도 뛰어온다, 택배 아저씨만 보면 꼬리를 흔든다</p>
         <textarea id="quirk" maxlength="300" style="min-height:80px" placeholder="비워 두시면 아이 종류에 맞는 대사로 넣어 드려요"></textarea>
+      </fieldset>
+      <fieldset>
+        <label class="q" for="wishAB">아이에게서 듣고 싶은 말</label>
+        <p class="hint">영상 마지막, 아이가 보호자님께 보내는 짧은 편지에 담아요. 비워 두시면 적어 주신 습관으로 써 드려요.</p>
+        <textarea id="wishAB" maxlength="300" style="min-height:80px" placeholder="예) 산책 데려가 줘서 고맙다고, 엄마가 제일 좋다고"></textarea>
+      </fieldset>
+      <fieldset>
+        <label class="q" for="callerAB">아이가 나를 부르는 이름</label>
+        <input type="text" id="callerAB" maxlength="12" placeholder="예) 엄마, 아빠, 언니, 형아">
       </fieldset>
     </div>
 
@@ -277,9 +292,9 @@
   <section class="done" id="done">
     <svg class="postmark-big" viewBox="0 0 90 90" fill="none" aria-hidden="true">
       <defs><path id="pmd" d="M45,45 m-32,0 a32,32 0 1,1 64,0 a32,32 0 1,1 -64,0"/></defs>
-      <circle cx="45" cy="45" r="41" stroke="#2F4A3C" stroke-width="1"/><circle cx="45" cy="45" r="25" stroke="#2F4A3C" stroke-width=".7"/>
-      <text font-size="6" font-weight="600" fill="#2F4A3C" letter-spacing="1.2"><textPath href="#pmd" textLength="196">RECEIVED WITH CARE · PET FILM ·</textPath></text>
-      <text x="45" y="49" text-anchor="middle" font-size="12" font-style="italic" fill="#2F4A3C" font-family="Cormorant Garamond, serif" id="doneDate"></text>
+      <circle cx="45" cy="45" r="41" stroke="#00786F" stroke-width="1"/><circle cx="45" cy="45" r="25" stroke="#00786F" stroke-width=".7"/>
+      <text font-size="6" font-weight="600" fill="#00786F" letter-spacing="1.2"><textPath href="#pmd" textLength="196">RECEIVED WITH CARE · PET FILM ·</textPath></text>
+      <text x="45" y="49" text-anchor="middle" font-size="12" font-style="italic" fill="#00786F" font-family="SUIT, sans-serif" id="doneDate"></text>
     </svg>
     <h2>잘 받았어요</h2>
     <p><b id="donePet"></b>의 영상을 정성껏 만들고 있을게요.<br>완성되면 파마스퀘어 막내앨범 계정에서 <b>공동 작업 초대</b>를 보내 드려요.<br>인스타그램 알림이나 DM에서 <b>수락</b>만 눌러 주세요.</p>
@@ -290,13 +305,14 @@
     <details><summary>정말 무료인가요?</summary><p>네. 파마스퀘어가 고객님께 드리는 선물이라 비용이 없어요. 신청이 많을 때는 접수 순서대로 만들어 드립니다.</p></details>
     <details><summary>공동 작업 초대는 어떻게 수락하나요?</summary><p>영상이 올라가면 인스타그램 알림과 DM으로 초대가 와요. 초대를 눌러 '수락'을 고르면 끝이에요. 수락하면 같은 영상이 보호자님 프로필과 피드에도 올라가고, 원하시면 언제든 내 프로필에서 내릴 수 있어요. 비공개 계정도 수락할 수 있어요.</p></details>
     <details><summary>영상 파일로 받을 수는 없나요?</summary><p>완성 영상은 공동 작업으로 보호자님 계정에 함께 올라가서 따로 파일을 보내 드리지 않아요. 꼭 필요한 사정이 있으면 DM으로 말씀해 주세요.</p></details>
-    <details><summary>영상이 5개가 안 돼요</summary><p>4개만 있어도 만들어 드려요. 영상이 거의 없다면 C안(편지)은 사진으로 만들 수 있어요.</p></details>
-    <details><summary>강아지·고양이가 아니어도 되나요?</summary><p>C안은 어떤 아이든 괜찮아요. A·B안은 지금은 고양이와 강아지만 만들고 있어요.</p></details>
+    <details><summary>영상이 5개가 안 돼요</summary><p>4개만 있어도 만들어 드려요. 비슷한 장면이 있으면 그 영상도 괜찮아요.</p></details>
+    <details><summary>강아지·고양이가 아니어도 되나요?</summary><p>지금은 강아지와 고양이만 만들고 있어요.</p></details>
+    <details><summary>"이번 주의 영상"이 뭔가요?</summary><p>매주 영상 주제와 대사가 바뀌어요. 신청하신 주의 주제로 만들어 드려요.</p></details>
     <details><summary>얼마나 걸리나요?</summary><p>보통 며칠 안에 올려 드려요. 신청이 몰리면 조금 더 걸릴 수 있어요.</p></details>
   </div>
 
   <footer>
-    <span class="cap">PET FILM · BY PHARMASQUARE</span>
+    <img class="logo" src="logo.png" alt="PHAMA SQUARE">
     <a href="https://instagram.com/{{INSTA_ID}}">@{{INSTA_ID}}</a>
   </footer>
 </div>
@@ -308,7 +324,9 @@ const SUPABASE_URL = "https://ypeqsbmuuedzdzxkuuoj.supabase.co";
 const SUPABASE_KEY = "sb_publishable_btnttsBH9a0A7BxyhS5T7w_o0_YfZdu";   // sb_publishable_... (공개용 키. service_role 키는 절대 넣지 않는다)
 const BUCKET = "submissions";
 // ▼ 샘플 영상과 칸별 예시 영상 주소 (8장 참고). 비어 있으면 회색 칸으로 보인다
-const SAMPLE = { A: "{{SAMPLE_A_URL}}", B: "{{SAMPLE_B_URL}}", C: "{{SAMPLE_C_URL}}" };
+// ▼ 이번 주의 영상. 매주 theme(주제)와 샘플 주소만 바꾼다
+const WEEK = { theme: "자기소개", season: "2026-w48" };
+const SAMPLE = { A: "{{SAMPLE_A_URL}}", B: "{{SAMPLE_B_URL}}" };
 const SLOTS = {
   A: [
     ["카메라를 쳐다보는 모습", "이름을 부르면 돌아보는 순간이 좋아요", "{{EX_A1}}"],
@@ -329,6 +347,7 @@ const LIVE = Boolean(SUPABASE_URL && SUPABASE_KEY);
 if (!LIVE) document.getElementById('testBanner').style.display = 'block';
 const $ = id => document.getElementById(id);
 const okUrl = u => u && !u.startsWith('{{');
+document.getElementById('sampleTitle').textContent = `이번 주의 영상 · ${WEEK.theme}`;
 
 const vid = $('sampleVideo'), sb = $('soundBtn');
 sb.onclick = () => { vid.muted = !vid.muted; if (!vid.muted) { vid.currentTime = 0; vid.play(); } sb.textContent = vid.muted ? '소리 켜기' : '소리 끄기'; };
@@ -342,7 +361,7 @@ function setKind(k){
   ['common','tail'].forEach(id => $(id).classList.remove('hide'));
   $('meme').classList.toggle('hide', k === 'C'); $('letter').classList.toggle('hide', k !== 'C');
   $('breedReq').style.display = k === 'C' ? 'inline' : 'none';
-  $('sampleLen').textContent = k === 'C' ? '약 45초' : '약 17초';
+  $('sampleLen').textContent = '약 24초';
   if (okUrl(SAMPLE[k])) { vid.src = SAMPLE[k]; vid.play().catch(()=>{}); }
   if (k !== 'C') renderSlots();
 }
@@ -433,7 +452,7 @@ $('form').addEventListener('submit', async e => {
         for (let i=0;i<5;i++){ const f = slotFiles[i]; if (!f) continue; await put(f, `${id}/slot-${i+1}.${vext(f)}`, f.type || 'video/mp4'); }
       }
       const row = {
-        id, kind, season: '2026-winter', pet_name: pet, breed: breed || null,
+        id, kind, season: WEEK.season, pet_name: pet, breed: breed || null,
         instagram: insta, email: $('email').value.trim() || null, files,
         photo_count: kind === 'C' ? photos.length : 0, video_count: kind === 'C' ? 0 : files.length,
         consent_privacy: true, consent_publish: true, consent_marketing: $('agreeMarketing').checked,
@@ -444,7 +463,7 @@ $('form').addEventListener('submit', async e => {
         memory: $('memory').value.trim(), one_line: $('oneLine').value.trim() || null,
         wish_words: $('wish').value.trim() || null, message: $('message').value.trim() || null,
         caller_name: $('caller').value.trim() || null, hero_file: heroPath });
-      else row.quirk = $('quirk').value.trim() || null;
+      else Object.assign(row, { quirk: $('quirk').value.trim() || null, wish_words: $('wishAB').value.trim() || null, caller_name: $('callerAB').value.trim() || null });
       const { error } = await sbc.from('applications').insert(row);
       if (error) throw error;
     } else {
