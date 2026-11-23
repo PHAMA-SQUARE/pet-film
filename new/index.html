@@ -198,7 +198,7 @@
       <video id="sampleVideo" autoplay muted loop playsinline preload="metadata"></video>
       <button type="button" class="sound" id="soundBtn">소리 켜기</button>
     </div>
-    <p class="sample-note">샘플 영상 · 보내 주신 영상과 아이 이름이 이 자리에 들어가요</p>
+    <p class="sample-note">샘플 영상 · 노래 가사에 맞춰 보내 주신 영상과 아이 이름이 들어가요</p>
   </section>
 
   <h2><small>HOW TO</small>참여는 딱 세 단계</h2>
@@ -244,12 +244,12 @@
       </fieldset>
       <fieldset>
         <span class="q">장면 영상 5개<span class="req">*</span></span>
-        <p class="hint">칸마다 왼쪽 예시처럼 찍힌 영상을 하나씩 골라 주세요. 각 3초 이상이면 되고, 세로 영상이면 더 좋아요. 4개만 있어도 만들어 드려요.</p>
+        <p class="hint">노래 가사 순서대로 장면이 나와요. 칸마다 왼쪽 예시처럼 찍힌 영상을 하나씩 골라 주세요. 각 3초 이상이면 되고, 세로 영상이면 더 좋아요. 4개만 있어도 만들어 드려요.</p>
         <div id="slots"></div>
       </fieldset>
       <fieldset>
         <label class="q" for="quirk">우리 아이만의 웃긴 습관</label>
-        <p class="hint">영상 마지막 반전 한 줄이 돼요. 웃길수록 반응이 커져요.</p>
+        <p class="hint">게시글 캡션에 소개해 드려요. 웃길수록 반응이 커져요.</p>
         <textarea id="quirk" maxlength="300" placeholder="예) 간식 봉지 소리엔 자다가도 뛰어온다"></textarea>
       </fieldset>
       <fieldset>
@@ -319,21 +319,21 @@ const SUPABASE_URL = "https://ypeqsbmuuedzdzxkuuoj.supabase.co";
 const SUPABASE_KEY = "sb_publishable_btnttsBH9a0A7BxyhS5T7w_o0_YfZdu";
 const BUCKET = "submissions";
 // ▼ 샘플 영상과 칸별 예시 영상 주소. 비어 있으면 회색 칸으로 보인다
-const SAMPLE = { A: "https://d2ol7oe51mr4n9.cloudfront.net/user_38bEaHFyIQZGbqYcZnT2FbFDAmL/64ae83aa-d489-4d2c-8441-fe70dd161b67.mp4", B: "https://d2ol7oe51mr4n9.cloudfront.net/user_38bEaHFyIQZGbqYcZnT2FbFDAmL/134b010a-5f0f-4b1e-9fcb-946a4ae885cc.mp4" };
+const SAMPLE = { A: "https://d2ol7oe51mr4n9.cloudfront.net/user_38bEaHFyIQZGbqYcZnT2FbFDAmL/0ce1ce97-9294-4958-b5cc-bb1883da39f1.mp4", B: "https://d2ol7oe51mr4n9.cloudfront.net/user_38bEaHFyIQZGbqYcZnT2FbFDAmL/898435f5-5a78-40b9-b758-0c4788b44f48.mp4" };
 const SLOTS = {
   A: [
-    ["카메라를 쳐다보는 모습", "이름을 부르면 돌아보는 순간이 좋아요", "{{EX_A1}}"],
-    ["늘어져 자는 모습", "배를 보이거나 동그랗게 말린 모습", "{{EX_A2}}"],
-    ["밥이나 간식 먹는 모습", "그릇에 얼굴을 묻은 모습", "{{EX_A3}}"],
-    ["창밖을 보는 모습", "창가에 앉아 밖을 구경하는 모습", "{{EX_A4}}"],
-    ["털 고르는 모습", "앞발이나 몸을 핥는 모습", "{{EX_A5}}"]
+    ["나를 바라보는 모습", "이름을 부르면 돌아보는 순간. 첫 장면과 마지막 '집사가 내 전부야' 장면에 쓰여요", "{{EX_A1}}"],
+    ["늘어져 자는 모습", "\"Sleep most of the day, don't wake me\" 장면이에요", "{{EX_A2}}"],
+    ["밥이나 간식 먹는 모습", "\"Dinner's at my time\" 장면이에요", "{{EX_A3}}"],
+    ["털 고르는 모습", "앞발이나 몸을 핥는 모습. \"Self care\" 장면이에요", "{{EX_A4}}"],
+    ["제일 좋아하는 자리", "창가, 상자, 이불 위처럼 아이가 차지한 자리. \"This spot, mine\" 장면이에요", "{{EX_A5}}"]
   ],
   B: [
-    ["카메라를 쳐다보는 모습", "이름을 부르면 돌아보는 순간이 좋아요", "{{EX_B1}}"],
-    ["자는 모습", "소파나 방석에 늘어져 자는 모습", "{{EX_B2}}"],
-    ["밥 먹는 모습", "열심히 먹는 모습이면 다 좋아요", "{{EX_B3}}"],
-    ["산책하는 모습", "신나게 걷거나 뛰는 모습", "{{EX_B4}}"],
-    ["씻는 모습 (또는 뒹구는 모습)", "목욕을 싫어하는 표정이면 최고예요. 없으면 바닥에 뒹구는 모습", "{{EX_B5}}"]
+    ["나를 바라보는 모습", "이름을 부르면 돌아보는 순간. 첫 장면과 마지막 '내 사람이 내 전부야' 장면에 쓰여요", "{{EX_B1}}"],
+    ["늘어져 자는 모습", "\"Sleep most of the day\" 장면이에요", "{{EX_B2}}"],
+    ["밥 먹는 모습", "\"Dinner gone in three\" 장면. 허겁지겁 먹을수록 좋아요", "{{EX_B3}}"],
+    ["씻거나 미용하는 모습", "\"Nope, nope, no way\" 장면. 싫어하는 표정이면 최고예요", "{{EX_B4}}"],
+    ["산책하는 모습", "\"Let's go, let's go\" 장면. 신나게 걷거나 뛰는 모습", "{{EX_B5}}"]
   ]
 };
 
