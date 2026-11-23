@@ -4,11 +4,22 @@
 # 구성: 컷1~5 = 영상1~5에 자막1~5 (각 CUT초) / 컷6 = 영상(last_clip)에 자막6("그런데…") 1.4초 뒤 자막7(반전)로 바뀜
 # 배경음악: BGM=<파일> [BGM_SS=<시작 초>] bash meme.sh ...  (지정하지 않으면 무음)
 # 2026-11-23 개정: M/l_bg.png(편지 엔딩)가 있으면 반전 컷 뒤에 7.5초 편지 엔딩을 붙인다(약 24.7초). 원본은 meme.v2doc.sh
+# 2026-11-23 개정2(음악 맞춤): meme.json에 넣으면 쓴다
+#   "cuts":[5개 초]  컷1~5 길이(음악 박자에 맞춤). 없으면 cut×5
+#   "turn": 초       "그런데…" 자막이 떠 있는 시간(기본 1.4). 이 시점에 반전 자막으로 바뀐다
+#   "end": 초        마지막 컷 전체 길이(그런데+반전, 기본 4.2)
+#   "bgm":"bgm/dog_cool.mp3", "bgm_ss": 0   배경음악(키트 폴더 기준). 환경변수 BGM이 있으면 그것이 우선
 set -e
 D="${1:?jobs/<신청번호> 폴더를 지정하세요}"
 CUT=$(python3 -c "import json;print(json.load(open('$D/meme.json')).get('cut',2.6))")
 LAST=$(python3 -c "import json;print(json.load(open('$D/meme.json')).get('last_clip',2))")
-END=4.2
+END=$(python3 -c "import json;print(json.load(open('$D/meme.json')).get('end',4.2))")
+TURN=$(python3 -c "import json;print(json.load(open('$D/meme.json')).get('turn',1.4))")
+mapfile -t CUTS < <(python3 -c "
+import json;j=json.load(open('$D/meme.json'));c=j.get('cuts') or [j.get('cut',2.6)]*5
+print('\n'.join(str(x) for x in c))")
+KIT="$(cd "$(dirname "$0")" && pwd)"
+if [ -z "$BGM" ]; then JB=$(python3 -c "import json;print(json.load(open('$D/meme.json')).get('bgm',''))"); [ -n "$JB" ] && BGM="$KIT/$JB" && BGM_SS=$(python3 -c "import json;print(json.load(open('$D/meme.json')).get('bgm_ss',0))"); fi
 mapfile -t CL < <(python3 -c "
 import json;j=json.load(open('$D/meme.json'))
 for c in j['clips']: print(c['file'], c.get('ss',0))")
@@ -19,16 +30,18 @@ IN=""; for c in "${CL[@]}"; do f=$(echo $c | cut -d' ' -f1); s=$(echo $c | cut -
 IN="$IN -ss $LS -i $D/$LF"
 for n in 1 2 3 4 5 6 7; do IN="$IN -framerate 30 -loop 1 -t 5 -i $D/M/cap_$n.png"; done
 NL=$(ls "$D"/M/l_[0-9]*.png 2>/dev/null | wc -l); LET=0; [ -f "$D/M/l_bg.png" ] && LET=7.5
-TOT=$(python3 -c "print(round($CUT*5+$END+$LET,2))"); SEG=$(python3 -c "print(round($END+$LET,2))")
+SUM=$(python3 -c "print(round(sum([${CUTS[0]},${CUTS[1]},${CUTS[2]},${CUTS[3]},${CUTS[4]}]),3))")
+TOT=$(python3 -c "print(round($SUM+$END+$LET,2))"); SEG=$(python3 -c "print(round($END+$LET,2))")
 if [ -n "$BGM" ]; then AUD="-ss ${BGM_SS:-0} -t $TOT -i $BGM"; else AUD="-f lavfi -t $TOT -i anullsrc=r=44100:cl=stereo"; fi
 V="scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,setsar=1,fps=30,format=yuv420p"
 FC=""
 for i in 0 1 2 3 4; do
+  CUT=${CUTS[$i]}
   FC="$FC[$i:v]$V,tpad=stop_mode=clone:stop_duration=$CUT,trim=0:$CUT,setpts=PTS-STARTPTS[v$i];[$((i+6)):v]format=rgba,trim=0:$CUT,setpts=PTS-STARTPTS[c$i];[v$i][c$i]overlay,format=yuv420p[k$i];"
 done
 FC="$FC[5:v]$V,tpad=stop_mode=clone:stop_duration=$SEG,trim=0:$SEG,setpts=PTS-STARTPTS[v5];"
-FC="$FC[11:v]format=rgba,trim=0:1.4,setpts=PTS-STARTPTS[c5];[12:v]format=rgba,trim=0:$END,fade=in:st=1.4:d=0.15:alpha=1,setpts=PTS-STARTPTS[c6];"
-FC="$FC[v5][c5]overlay=enable='lt(t,1.4)'[w5];[w5][c6]overlay=eof_action=pass,format=yuv420p[k5];"
+FC="$FC[11:v]format=rgba,trim=0:$TURN,setpts=PTS-STARTPTS[c5];[12:v]format=rgba,trim=0:$END,fade=in:st=$TURN:d=0.15:alpha=1,setpts=PTS-STARTPTS[c6];"
+FC="$FC[v5][c5]overlay=enable='lt(t,$TURN)'[w5];[w5][c6]overlay=eof_action=pass,format=yuv420p[k5];"
 if [ "$LET" != "0" ]; then
   # 편지 엔딩: 화면이 멈춘 채 어두워지고(0.8초), 편지 줄이 1.2초 간격으로, 이어 서명과 끝 표기가 떠오른다
   LIN="-framerate 30 -loop 1 -t $SEG -i $D/M/l_bg.png"; k=14; L="[k5]"; n=0
@@ -47,8 +60,13 @@ FC="$FC[13:a]afade=t=in:d=0.3,afade=t=out:st=$(python3 -c "print(round($TOT-1,2)
 ffmpeg -v error -y $IN $AUD $LIN -filter_complex "$FC" -map "[v]" -map "[a]" -t $TOT \
   -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart "$D/out.mp4"
 # 검수용 모음과 표지
-i=0; for t in $(python3 -c "c=$CUT;L=$LET;print(' '.join(str(round(c*k+c/2,2)) for k in range(5))+' '+str(round(c*5+0.7,2))+' '+str(round(c*5+3,2))+((' '+str(round(c*5+$END+5,2))+' '+str(round($TOT-1.2,2))) if L else ''))"); do
+i=0; for t in $(python3 -c "
+c=[${CUTS[0]},${CUTS[1]},${CUTS[2]},${CUTS[3]},${CUTS[4]}];s=0;o=[]
+for x in c: o.append(round(s+x/2,2)); s+=x
+o+=[round(s+$TURN/2,2), round(s+$TURN+($END-$TURN)/2,2)]
+if $LET: o+=[round(s+$END+5,2), round($TOT-1.2,2)]
+print(' '.join(map(str,o)))"); do
   ffmpeg -v error -y -ss $t -i "$D/out.mp4" -frames:v 1 -vf scale=180:-1 "$D/q_$i.jpg"; i=$((i+1)); done
 montage $(ls "$D"/q_*.jpg | sort -V) -tile ${i}x1 -geometry +2+2 "$D/strip.jpg" && rm -f "$D"/q_*.jpg
-ffmpeg -v error -y -ss $(python3 -c "print($CUT/2)") -i "$D/out.mp4" -frames:v 1 -q:v 3 "$D/cover.jpg"
+ffmpeg -v error -y -ss $(python3 -c "print(${CUTS[0]}/2)") -i "$D/out.mp4" -frames:v 1 -q:v 3 "$D/cover.jpg"
 echo "완료 → $D/out.mp4 (${TOT}초), 검수 $D/strip.jpg, 표지 $D/cover.jpg"

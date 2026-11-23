@@ -1,0 +1,71 @@
+{
+ "type": "A",
+ "pet": "나비",
+ "clips": [
+  {
+   "file": "1.mp4",
+   "ss": 4.5
+  },
+  {
+   "file": "2.mp4",
+   "ss": 1
+  },
+  {
+   "file": "3.mp4",
+   "ss": 4.5
+  },
+  {
+   "file": "4.mp4",
+   "ss": 1
+  },
+  {
+   "file": "5.mp4",
+   "ss": 1
+  }
+ ],
+ "last_clip": 2,
+ "cut": 2.6,
+ "lines": [
+  {
+   "en": "I am a cat",
+   "ko": "나는 고양이, 나비"
+  },
+  {
+   "en": "My job? Napping",
+   "ko": "하는 일은 낮잠"
+  },
+  {
+   "en": "I decide when dinner is",
+   "ko": "밥 시간은 내가 정한다"
+  },
+  {
+   "en": "Security? I watch everything",
+   "ko": "감시는 눈빛으로 한다"
+  },
+  {
+   "en": "Chin scratches: by appointment",
+   "ko": "턱 긁기는 예약제"
+  },
+  {
+   "en": "And yet…",
+   "ko": "그런데…"
+  },
+  {
+   "en": "Why do they say I have it easy?",
+   "ko": "다들 나보고 팔자 좋대"
+  }
+ ],
+ "mark": "파마스퀘어 막내앨범",
+ "_clips_source": "Mixkit Free License: 1535 white cat, 4102 cat nap, 1547 two cats eating, 1546 yellow-eyed black cat, 1778 petting a cat",
+ "cuts": [
+  3.37,
+  3.27,
+  3.21,
+  3.39,
+  3.11
+ ],
+ "turn": 3.15,
+ "end": 6.45,
+ "bgm": "bgm/cat_chic.mp3",
+ "bgm_ss": 0
+}

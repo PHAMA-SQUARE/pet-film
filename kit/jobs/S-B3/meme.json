@@ -1,0 +1,70 @@
+{
+ "type": "B",
+ "pet": "보리",
+ "clips": [
+  {
+   "file": "1.mp4",
+   "ss": 1
+  },
+  {
+   "file": "2.mp4",
+   "ss": 1
+  },
+  {
+   "file": "3.mp4",
+   "ss": 5
+  },
+  {
+   "file": "4.mp4",
+   "ss": 3
+  },
+  {
+   "file": "5.mp4",
+   "ss": 2
+  }
+ ],
+ "last_clip": 2,
+ "cut": 2.6,
+ "lines": [
+  {
+   "en": "I am a dog",
+   "ko": "나는 강아지, 보리"
+  },
+  {
+   "en": "I sleep all day",
+   "ko": "하루 대부분은 잔다"
+  },
+  {
+   "en": "Dinner takes 3 seconds",
+   "ko": "밥은 3초면 끝"
+  },
+  {
+   "en": "Walks are my whole life",
+   "ko": "산책이 인생의 전부다"
+  },
+  {
+   "en": "Grooming day? No comment",
+   "ko": "미용은… 얘기하지 말자"
+  },
+  {
+   "en": "And yet…",
+   "ko": "그런데…"
+  },
+  {
+   "en": "What time is tomorrow's walk?",
+   "ko": "내일 산책은 몇 시야?"
+  }
+ ],
+ "mark": "파마스퀘어 막내앨범",
+ "cuts": [
+  2.81,
+  2.39,
+  2.74,
+  2.37,
+  2.76
+ ],
+ "turn": 1.98,
+ "end": 6.93,
+ "bgm": "bgm/dog_cool.mp3",
+ "bgm_ss": 0
+}
