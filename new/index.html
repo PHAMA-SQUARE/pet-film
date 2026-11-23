@@ -296,7 +296,7 @@
 
   <footer>
     <img class="logo" src="../logo.png" alt="PHAMA SQUARE">
-    <a href="https://instagram.com/{{INSTA_ID}}">@{{INSTA_ID}}</a>
+    <a id="instaLink" href="https://instagram.com/{{INSTA_ID}}">@{{INSTA_ID}}</a>
   </footer>
 </div>
 <script type="module">
@@ -336,6 +336,8 @@ const SLOTS = {
 };
 
 const $ = id => document.getElementById(id);
+// 인스타 아이디가 정해지기 전({{INSTA_ID}} 그대로)에는 바닥 링크를 숨긴다
+if ($('instaLink').href.includes('%7B%7B') || $('instaLink').href.includes('{{')) $('instaLink').style.display = 'none';
 const okUrl = u => u && !u.startsWith('{{');
 const LIVE = Boolean(SUPABASE_URL && SUPABASE_KEY);
 if (!LIVE) $('testBanner').style.display = 'block';
