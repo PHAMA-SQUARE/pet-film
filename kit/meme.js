@@ -1,5 +1,6 @@
 // meme.js — 강아지·고양이 자기소개 밈의 자막 그림과 편지 엔딩 그림을 만든다.  사용: node meme.js jobs/<신청번호>
 // 입력: jobs/<신청번호>/meme.json   출력: jobs/<신청번호>/M/*.png (720x1280, 투명 배경)
+// 자막: 한국어 큰 줄 + 영어 작은 줄(이탤릭) — A·B안 음악·가사 인수인계(2026-11-23)
 // 디자인: 파마스퀘어 브랜드(SUIT, 흰 글자 + 끝 어절 민트, 상단 민트 선, 오른쪽 위 PHAMA SQUARE 로고). 2026-11-23 개정.
 // 기획안 v2 원본은 meme.v2doc.js 에 그대로 두었다.
 //   cap_1..7.png      밈 자막 7장
@@ -26,7 +27,7 @@ body{width:720px;height:1280px;position:relative;overflow:hidden;word-break:keep
 .logo{position:absolute;right:64px;top:192px;height:11px;filter:drop-shadow(0 1px 4px rgba(0,0,0,.5))}
 .mark{position:absolute;left:64px;top:186px;font-weight:700;font-size:16px;letter-spacing:.02em;color:rgba(255,255,255,.9)}
 .cap{position:absolute;left:64px;right:64px;top:${TOP}px;color:#FFFFFF}
-.en{font-weight:700;font-size:22px;line-height:1.2;color:${MINT2};margin-bottom:8px;letter-spacing:.01em}
+.en{font-weight:700;font-size:22px;line-height:1.3;color:${MINT2};margin-top:8px;letter-spacing:.01em;font-style:italic}
 .ko{font-weight:800;font-size:40px;line-height:1.4;letter-spacing:-.02em}
 .ko em{font-style:normal;color:${MINT}}
 .letter{position:absolute;left:64px;right:64px;color:#FFFFFF;font-weight:700;font-size:34px;line-height:1.5;letter-spacing:-.02em}
@@ -46,7 +47,7 @@ const lastMint = t => {
 const chrome = `<div class="line"></div><img class="logo" src="${LOGO}">${J.mark ? `<div class="mark shadow">${J.mark}</div>` : ''}`;
 const P = {};
 J.lines.forEach((l, i) => {
-  P['cap_' + (i + 1)] = `${chrome}<div class="cap shadow">${l.en ? `<div class="en">${l.en}</div>` : ''}<div class="ko">${lastMint(l.ko)}</div></div>`;
+  P['cap_' + (i + 1)] = `${chrome}<div class="cap shadow"><div class="ko">${lastMint(l.ko)}</div>${l.en ? `<div class="en">${l.en}</div>` : ''}</div>`;
 });
 // 편지 엔딩 (meme.json에 letter가 있을 때만)
 if (Array.isArray(J.letter) && J.letter.length) {
