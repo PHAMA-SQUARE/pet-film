@@ -1,0 +1,117 @@
+{
+ "type": "A",
+ "pet": "나비",
+ "song": "Chic Cat",
+ "clips": [
+  {
+   "file": "1.mp4",
+   "ss": 4.5
+  },
+  {
+   "file": "2.mp4",
+   "ss": 1
+  },
+  {
+   "file": "3.mp4",
+   "ss": 3.8
+  },
+  {
+   "file": "4.mp4",
+   "ss": 1
+  },
+  {
+   "file": "5.mp4",
+   "ss": 1
+  }
+ ],
+ "bgm": "bgm/cat_chic.mp3",
+ "total": 22.8,
+ "lines": [
+  {
+   "en": "I'm a chic cat",
+   "ko": "나는 시크한 고양이, 나비"
+  },
+  {
+   "en": "Sleep most of the day",
+   "ko": "하루 대부분은 잠"
+  },
+  {
+   "en": "Don't wake me",
+   "ko": "깨우지 마"
+  },
+  {
+   "en": "Dinner's at my time",
+   "ko": "밥은 내가 정한 시간에"
+  },
+  {
+   "en": "Self care, three hours a day",
+   "ko": "단장은 하루 세 시간"
+  },
+  {
+   "en": "This spot, my favorite place",
+   "ko": "여기가 제일 좋은 자리"
+  },
+  {
+   "en": "Mine.",
+   "ko": "내 거야"
+  },
+  {
+   "en": "But my human is my whole life",
+   "ko": "그래도 집사가 내 전부야"
+  },
+  {
+   "en": "Shh, don't tell",
+   "ko": "쉿, 비밀이야"
+  }
+ ],
+ "timeline": [
+  {
+   "t": 0,
+   "clip": 1,
+   "cap": 1
+  },
+  {
+   "t": 2.16,
+   "clip": 2,
+   "cap": 2
+  },
+  {
+   "t": 4.78,
+   "clip": 2,
+   "cap": 3
+  },
+  {
+   "t": 6.06,
+   "clip": 3,
+   "cap": 4
+  },
+  {
+   "t": 7.76,
+   "clip": 4,
+   "cap": 5
+  },
+  {
+   "t": 11.32,
+   "clip": 5,
+   "cap": 6
+  },
+  {
+   "t": 13.96,
+   "clip": 5,
+   "cap": 7
+  },
+  {
+   "t": 16.08,
+   "clip": 1,
+   "cap": 8,
+   "ss": 4.5
+  },
+  {
+   "t": 19.1,
+   "clip": 1,
+   "cap": 9
+  }
+ ],
+ "mark": "파마스퀘어 막내앨범",
+ "_clips_source": "Mixkit Free: 1535 white cat, 4102 cat nap, 1547 two cats eating, 1778 petting(단장 대체), 4103 siamese in a hat"
+}

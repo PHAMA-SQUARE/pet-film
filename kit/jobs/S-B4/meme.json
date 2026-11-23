@@ -1,0 +1,108 @@
+{
+ "type": "B",
+ "pet": "보리",
+ "song": "Cool Dog",
+ "clips": [
+  {
+   "file": "1.mp4",
+   "ss": 1
+  },
+  {
+   "file": "2.mp4",
+   "ss": 1
+  },
+  {
+   "file": "3.mp4",
+   "ss": 5
+  },
+  {
+   "file": "4.mp4",
+   "ss": 2
+  },
+  {
+   "file": "5.mp4",
+   "ss": 3
+  }
+ ],
+ "bgm": "bgm/dog_cool.mp3",
+ "total": 20.0,
+ "lines": [
+  {
+   "en": "I'm a cool dog",
+   "ko": "나는 쿨한 강아지, 보리"
+  },
+  {
+   "en": "Sleep most of the day, the best",
+   "ko": "하루 종일 자는 게 최고"
+  },
+  {
+   "en": "Dinner gone in three… 1, 2, 3",
+   "ko": "밥은 3초 컷, 하나 둘 셋"
+  },
+  {
+   "en": "Grooming? Let's not talk about it",
+   "ko": "미용은… 얘기하지 말자"
+  },
+  {
+   "en": "Nope, nope, no way",
+   "ko": "싫어 싫어, 절대 안 돼"
+  },
+  {
+   "en": "Walks, pure happiness. Let's go!",
+   "ko": "산책은 행복 그 자체, 가자 가자"
+  },
+  {
+   "en": "But my human is my whole life",
+   "ko": "그래도 내 사람이 내 전부야"
+  },
+  {
+   "en": "My whole life",
+   "ko": "진짜 전부야"
+  }
+ ],
+ "timeline": [
+  {
+   "t": 0,
+   "clip": 1,
+   "cap": 1
+  },
+  {
+   "t": 2.56,
+   "clip": 2,
+   "cap": 2
+  },
+  {
+   "t": 5.2,
+   "clip": 3,
+   "cap": 3
+  },
+  {
+   "t": 7.74,
+   "clip": 4,
+   "cap": 4
+  },
+  {
+   "t": 9.8,
+   "clip": 4,
+   "cap": 5
+  },
+  {
+   "t": 10.82,
+   "clip": 5,
+   "cap": 6
+  },
+  {
+   "t": 14.58,
+   "clip": 1,
+   "cap": 7,
+   "ss": 1
+  },
+  {
+   "t": 17.74,
+   "clip": 1,
+   "cap": 8
+  }
+ ],
+ "mark": "파마스퀘어 막내앨범",
+ "_clips_source": "Mixkit Free: B1, B2, B3, 1661 grooming, B4 walk"
+}
